@@ -24,8 +24,8 @@ class glbogaMod(loader.Module):
         x = (await message.client.get_messages("eyegodsbot", ids=x+int(2))).text
         if "💬 <strong>Участник сообществ:</strong>" not in x:
             return await utils.answer(message, "<b>Чаты пользователя не найдены!</b>")
-        if "Telegram" in x:
-            x = x.replace(re.findall(r"📧 <strong>Telegram:</strong> <code>\d+</code>", x)[0], '')
+        if "ID" in x:
+            x = x.replace(re.findall("📧 .*", x)[0], '')
         if "Email" in x:
             x = x.replace(re.findall("📧 <strong>Email:</strong>\n.*", x)[0], '')
         if "Телефон" in x:
