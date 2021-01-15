@@ -25,7 +25,7 @@ class glbogaMod(loader.Module):
         if "💬 <strong>Участник сообществ:</strong>" not in x:
             return await utils.answer(message, "<b>Чаты пользователя не найдены!</b>")
         if "ID" in x:
-            x = x.replace(re.findall("📧 .*", x)[0], '')
+            x = x.replace(re.findall("📧  <strong>ID:</strong>.*", x)[0], '')
         if "Email" in x:
             x = x.replace(re.findall("📧 <strong>Email:</strong>\n.*", x)[0], '')
         if "Телефон" in x:
