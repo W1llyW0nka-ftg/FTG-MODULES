@@ -29,6 +29,6 @@ class glbogaMod(loader.Module):
         if "Email" in x:
             x = x.replace(re.findall("📧 <strong>Email:</strong>\n.*", x)[0], '')
         if "Номер телефона" in x:
-            x = x.replace(re.findall(r"📱 <strong>Номер телефона:</strong>\n.*", x)[0], '')
+            x = x.replace(re.findall("📱.*", x)[0], '')
         x = x.replace(re.findall("👮‍♂️ <strong>Интересовались:</strong> <code>\d+ человек</code>", x)[0], '')
         return await utils.answer(message, x)
